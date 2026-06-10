@@ -41,6 +41,7 @@ X_train['id_sucursal'] = X_train['id_sucursal'].astype('category')
 
 # 4. Entrenar el modelo con los parámetros óptimos
 lgbm = lgb.LGBMRegressor(
+    objective='huber',
     learning_rate=0.05,
     min_child_samples=20,
     n_estimators=100,
